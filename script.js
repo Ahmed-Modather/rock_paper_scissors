@@ -50,9 +50,39 @@ function playRound(playerSelection, computerSelection) {
         * ${computer} beats ${player}`;
         return x;
     } 
-}    
+}   
 
- 
+//game logic function
+function game() {
+    let playerScore = 0;
+    let computerScore= 0;
+    for (let i = 0; i < 5; i++) {
+        let round = playRound(getUserChoice, getComputerChoice);
+
+        if (round.slice(0,1)==="C") {
+            playerScore += 1;
+            console.log(round)
+        } else if (round.slice(0,1)==="U") {
+            computerScore += 1;
+            console.log(round)
+        } else {
+            console.log(round)
+        }
+
+        let roundResult = `The Result of this round
+        You: ${playerScore} & the computer: ${computerScore}`;
+        console.log(roundResult)
+     }
+
+    if (playerScore>computerScore) {
+        console.log("You Won THE GAME")
+    } else {
+        console.log("GAME OVER")
+    }
+} 
+
+
+game();  //start
 
 
 
