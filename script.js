@@ -7,8 +7,19 @@ function getComputerChoice() {
     } else if (ranNum===2 ) {
         return 'Paper';
     } else {
-      return 'Scissors'  
+      return 'Scissors';  
     }
     
 }
 
+function getUserChoice() {
+    let choice = prompt("Enter 'Rock' or 'Paper' or 'Scissors'");
+    choice = choice.toLowerCase();
+    console.log(choice)
+
+    while (choice !=="rock" && choice!=="paper" && choice!=="Scissors") {
+        choice = prompt("Please, enter valid value! [Rock/Paper/Scissors]")
+        choice = choice.toLowerCase();
+    }
+    return choice;
+}
